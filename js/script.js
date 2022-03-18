@@ -12,15 +12,15 @@ let app = new Vue(
                     done : false,
                 },
                 {
-                    text : `Lavare la macchina`,
+                    text : `Lavare la macchina e sporcare quella del vicino`,
                     done : true,
                 },
                 {
-                    text : `Portare a spasso il gatto`,
+                    text : `Portare a spasso il gatto e l'ornitorinco`,
                     done : false,
                 },
                 {
-                    text : `Preparare il pranzo`,
+                    text : `Preparare il pranzo e urlare all'arrotino`,
                     done : false,
                 },
             ],
