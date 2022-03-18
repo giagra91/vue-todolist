@@ -25,7 +25,7 @@ let app = new Vue(
                 },
             ],
             newText : "",
-            newDone : "",
+            newDone : false,
             // myColor : ""
         },
         methods : {
@@ -36,7 +36,7 @@ let app = new Vue(
                     this.newDone = false;
                 }
 
-                if(this.newText !== "" && this.newDone || !this.newDone){
+                if(this.newText !== ""){
                     this.todoListItems.push(
                         {
                             text : this.newText,
@@ -48,7 +48,6 @@ let app = new Vue(
                 } else {
                     console.warn(`Devi aggiungere un elemento alla to do list! Non fare il furbo con me!`)
                 }
-                // console.error(this.myColor)
             },
             removeItem(index, array){
                 console.log(index);

@@ -29,6 +29,9 @@
 
     <main id="app">
         <div class="container-fluid p-5">
+            <div class="text-center">
+                <h1 class="fw-bold text-uppercase">To do list</h1>
+            </div>
             <div class="row p-5">
                 <div class="col-3 mb-5 d-flex justify-content-center align-items-center">
                     <input v-model="newDone" class="form-check-input ms-1" type="radio" name="doneTodo" id="doneTodo1" value="1" checked>
@@ -39,7 +42,7 @@
                     <label class="form-check-label ms-1" for="doneTodo2">
                         Da fare
                     </label>
-                    <input type="color" class="ms-2 form-control form-control-color" id="ColorInput" value="#563d7c" v-model="myColor">
+                    <!-- <input type="color" class="ms-2 form-control form-control-color" id="ColorInput" value="#563d7c" v-model="myColor"> -->
                 </div>
                 <div class="col-7 mb-5">
                     <input v-model="newText" type="text" class="form-control rounded-3" @keydown.enter="addItem()">
@@ -61,6 +64,12 @@
         </div>
 
     </main>
+
+    <footer class="text-center">
+        <h6>
+            Made with <span class="text-danger fs-4">&hearts;</span> by <a href="#">Classe 55</a> for Boolean
+        </h6>
+    </footer>
 
 
 
