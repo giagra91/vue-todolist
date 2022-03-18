@@ -26,16 +26,12 @@ let app = new Vue(
             ],
             newText : "",
             newDone : false,
-            // myColor : ""
         },
         methods : {
             addItem(){
                 if(this.newDone == 1){
                     this.newDone = true;
-                } else {
-                    this.newDone = false;
                 }
-
                 if(this.newText !== ""){
                     this.todoListItems.push(
                         {

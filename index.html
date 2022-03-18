@@ -26,23 +26,24 @@
 </head>
 <body>
     
-
     <main id="app">
         <div class="container-fluid p-5">
             <div class="text-center">
                 <h1 class="fw-bold text-uppercase">To do list</h1>
             </div>
             <div class="row p-5">
-                <div class="col-3 mb-5 d-flex justify-content-center align-items-center">
-                    <input v-model="newDone" class="form-check-input ms-1" type="radio" name="doneTodo" id="doneTodo1" value="1" checked>
-                    <label class="form-check-label ms-1" for="doneTodo1">
-                        Fatto
-                    </label>
-                    <input v-model="newDone" class="form-check-input ms-1" type="radio" name="doneTodo" id="doneTodo2" value="2">
-                    <label class="form-check-label ms-1" for="doneTodo2">
-                        Da fare
-                    </label>
-                    <!-- <input type="color" class="ms-2 form-control form-control-color" id="ColorInput" value="#563d7c" v-model="myColor"> -->
+                <div class="col-3">
+                    <div class="mb-5 d-flex justify-content-center align-items-center">
+                        <input v-model="newDone" class="form-check-input ms-1" type="radio" name="doneTodo" id="doneTodo1" value="1" checked>
+                        <label class="form-check-label ms-1 fw-bold" for="doneTodo1">
+                            Fatto
+                        </label>
+                        <input v-model="newDone" class="form-check-input ms-1" type="radio" name="doneTodo" id="doneTodo2" value="2">
+                        <label class="form-check-label ms-1 fw-bold" for="doneTodo2">
+                            Da fare
+                        </label>
+
+                    </div>
                 </div>
                 <div class="col-7 mb-5">
                     <input v-model="newText" type="text" class="form-control rounded-3" @keydown.enter="addItem()">
@@ -50,15 +51,19 @@
                 <div class="col-2 text-center">
                     <button @click="addItem()" class="btn btn-primary">Inserisci dati</button>
                 </div>
-                <div class="col-12 text-center mx-2 rounded-3" id="my-todo-list">
-                    <ul class="list-unstyled">
-                        <li v-for="(element, index) in todoListItems" class="fw-bold py-2 px-5 border-bottom d-flex justify-content-between">
-                            <span :class="(element.done) ? `text-decoration-line-through`:``" @click="invertDone(index)">
-                                {{element.text}} 
-                            </span>
-                            <i class="fa-solid fa-xmark" @click="removeItem(index, todoListItems)"></i>
-                        </li>
-                    </ul>
+                <div class="col-12">
+                    <div class="text-center p-3 rounded-3" id="my-todo-list">
+                        <ul class="list-unstyled" v-if="todoListItems.length > 0">
+                            <li  v-for="(element, index) in todoListItems" class="fw-bold fs-5 text-uppercase py-2 px-5 border-bottom d-flex justify-content-between">
+                                <span :class="(element.done) ? `text-decoration-line-through`:``" @click="invertDone(index)">
+                                    {{element.text}} 
+                                </span>
+                                <i class="fa-solid fa-xmark" @click="removeItem(index, todoListItems)"></i>
+                            </li>
+                        </ul>
+                        <h3 v-else class="py-2">Non ci sono elementi nella to do list</h3>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,11 +72,9 @@
 
     <footer class="text-center">
         <h6>
-            Made with <span class="text-danger fs-4">&hearts;</span> by <a href="#">Classe 55</a> for Boolean
+            Made with <span class="text-danger fs-4">&hearts;</span> by <a href="#">Classe 55</a>
         </h6>
     </footer>
-
-
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>
