@@ -28,6 +28,37 @@
     
 
     <main id="app">
+        <div class="container-fluid p-5">
+            <div class="row p-5">
+                <div class="col-3 mb-5 d-flex justify-content-center align-items-center">
+                    <input v-model="newDone" class="form-check-input ms-1" type="radio" name="doneTodo" id="doneTodo1" value="1" checked>
+                    <label class="form-check-label ms-1" for="doneTodo1">
+                        Fatto
+                    </label>
+                    <input v-model="newDone" class="form-check-input ms-1" type="radio" name="doneTodo" id="doneTodo2" value="2">
+                    <label class="form-check-label ms-1" for="doneTodo2">
+                        Da fare
+                    </label>
+                    <input type="color" class="ms-2 form-control form-control-color" id="ColorInput" value="#563d7c" v-model="myColor">
+                </div>
+                <div class="col-7 mb-5">
+                    <input v-model="newText" type="text" class="form-control rounded-3" @keydown.enter="addItem()">
+                </div>
+                <div class="col-2 text-center">
+                    <button @click="addItem()" class="btn btn-primary">Inserisci dati</button>
+                </div>
+                <div class="col-12 text-center mx-2 rounded-3" id="my-todo-list">
+                    <ul class="list-unstyled">
+                        <li v-for="(element, index) in todoListItems" class="fw-bold py-2 px-5 border-bottom d-flex justify-content-between">
+                            <span :class="(element.done) ? `text-decoration-line-through`:``" @click="invertDone(index)">
+                                {{element.text}} 
+                            </span>
+                            <i class="fa-solid fa-xmark" @click="removeItem(index, todoListItems)"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
     </main>
 

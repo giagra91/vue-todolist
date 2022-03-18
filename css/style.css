@@ -1,3 +1,11 @@
 body{
     font-family: "Montserrat", sans-serif;
 }
+
+div#my-todo-list{
+    background-color: lightgrey;
+}
+
+div#my-todo-list ul li{
+    border-bottom: 1px solid grey;
+}
