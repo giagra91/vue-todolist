@@ -38,7 +38,7 @@ let app = new Vue(
                 if(this.newText !== ""){
                     this.todoListItems.push(
                         {
-                            text : this.newText,
+                            text : this.newText.trim(),
                             done : this.newDone,
                         },
                     )
