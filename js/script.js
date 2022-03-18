@@ -31,7 +31,10 @@ let app = new Vue(
             addItem(){
                 if(this.newDone == 1){
                     this.newDone = true;
+                } else {
+                    this.newDone = false;
                 }
+                console.log(this.newDone)
                 if(this.newText !== ""){
                     this.todoListItems.push(
                         {
@@ -39,11 +42,11 @@ let app = new Vue(
                             done : this.newDone,
                         },
                     )
-                    this.newDone = "",
-                    this.newText = ""
                 } else {
                     console.warn(`Devi aggiungere un elemento alla to do list! Non fare il furbo con me!`)
                 }
+                this.newDone = "",
+                this.newText = ""
             },
             removeItem(index, array){
                 console.log(index);
